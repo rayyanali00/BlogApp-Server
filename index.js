@@ -17,7 +17,8 @@ app.use(express.json())
 app.use('/user', userRoute)
 app.use('/blog', blogRoute)
 
-const uri = process.env.ATLAS_URL;
+// const uri = process.env.ATLAS_URL;
+const uri = 'mongodb+srv://rayyan123:rayyan123@cluster0.g3ymf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 mongoose.connect(uri, {useNewUrlParser:true, useCreateIndex:true, useUnifiedTopology: true});
 const connect = mongoose.connection;
 connect.once('open', ()=>{
