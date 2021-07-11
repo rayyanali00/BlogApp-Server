@@ -7,7 +7,7 @@ const blogRoute = require('./routes/blog')
 const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
-const port = 'https://ublog-app.herokuapp.com/';
+const PORT = process.env.PORT || 3001;
 app.use('/uploads', express.static('uploads'));
 
 app.use(cookieParser())
@@ -28,4 +28,4 @@ app.get('/',(req,res)=>{
     res.send("Server Running")
 })
 
-app.listen(port)
+app.listen(PORT)
